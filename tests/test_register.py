@@ -22,7 +22,7 @@ def test_register_user_weak_password(setup):
     # Go to register page
     store_page.go_to_register()
 
-    user = 'newuser98'
+    user = 'newuser97'
     email = f'{user}@domena.pl'
     password = '4545'
 
@@ -43,7 +43,7 @@ def test_register_user(setup):
     # Go to register page
     store_page.go_to_register()
 
-    user = 'newuser98'
+    user = 'newuser97'
     email = f'{user}@domena.pl'
     password = '4545p4$$w0rD!#'
 
@@ -64,7 +64,7 @@ def test_register_existing_user(setup):
     # Go to register page
     store_page.go_to_register()
 
-    user = 'newuser98'
+    user = 'newuser97'
     email = f'{user}@domena.pl'
     password = '4545p4$$w0rD!#'
 
