@@ -1,12 +1,12 @@
-import time
 from pages.store_page import StorePage
 from pages.register_page import RegisterPage
+import time
 
 
 def test_register_user_success(setup):
     store_page = StorePage(setup)
     register_page = RegisterPage(setup)
-    user = 'successfulregistration73'
+    user = 'successfulregistration01'
     email = f'{user}@domena.pl'
     password = 'successfulregistration@domena.pl'
 

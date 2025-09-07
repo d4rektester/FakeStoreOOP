@@ -1,6 +1,6 @@
-import time
 from pages.store_page import StorePage
 from pages.coupon_page import CouponPage
+import time
 
 
 def test_coupon_apply(setup):

@@ -1,7 +1,7 @@
-import time
 from pages.store_page import StorePage
 from pages.cart_page import CartPage
 from pages.checkout_page import CheckoutPage
+import time
 
 
 def test_card_message_incomplete_number(setup):

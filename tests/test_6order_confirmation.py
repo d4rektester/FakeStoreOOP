@@ -1,8 +1,8 @@
-import time
 from pages.store_page import StorePage
 from pages.cart_page import CartPage
 from pages.checkout_page import CheckoutPage
 from pages.order_confirmation_page import OrderConfirmationPage
+import time
 
 
 def test_order_placed_correctly(setup):

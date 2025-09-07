@@ -1,6 +1,6 @@
-import time
 from pages.store_page import StorePage
 from pages.cart_page import CartPage
+import time
 
 
 def test_remove_item_from_cart(setup):

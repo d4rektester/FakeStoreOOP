@@ -1,6 +1,6 @@
-import time
 from pages.store_page import StorePage
 from pages.login_page import LoginPage
+import time
 
 
 def test_login_empty_username (setup):
