@@ -2,7 +2,6 @@ from .base_page import BasePage
 from locators.checkout_locators import CheckoutLocators
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
-import time
 
 
 class CheckoutPage(BasePage):
@@ -62,20 +61,9 @@ class CheckoutPage(BasePage):
         self.js_scroll_into_view_block(wait_for_checkbox)
         self.find_element(By.ID, CheckoutLocators.TERMS_CHECKBOX).click()
 
-    # def select_terms_and_condition_checkbox(self):
-    #     self.switch_to_default_content()
-    #     self.hide_element_by(By.CLASS_NAME, CheckoutLocators.BANNER)
-    #     wait_for_checkbox = self.wait_until_element_present(By.ID, CheckoutLocators.TERMS_CHECKBOX)
-    #     self.js_scroll_into_view_block(wait_for_checkbox)
-    #     self.find_element(By.ID, CheckoutLocators.TERMS_CHECKBOX).click()
-
     def place_order(self):
         self.find_element(By.ID, CheckoutLocators.PLACE_ORDER_BUTTON).click()
 
     def get_checkout_error_message(self, expected_message):
         self.wait_until_text_present(By.CSS_SELECTOR, CheckoutLocators.CHECKBOX_ERROR_MESSAGE,expected_message)
         return self.find_element(By.CSS_SELECTOR, CheckoutLocators.CHECKBOX_ERROR_MESSAGE).text
-
-    def get_order_confirmation(self):
-        # return self.find_element(By.CSS_SELECTOR, CheckoutLocators.ORDER_CONFIRMATION).text
-        pass

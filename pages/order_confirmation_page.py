@@ -1,6 +1,5 @@
 from .base_page import BasePage
 from locators.order_confirmation_locators import OrderConfirmationLocators
-from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 
 class OrderConfirmationPage(BasePage):

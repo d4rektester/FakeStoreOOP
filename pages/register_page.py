@@ -1,7 +1,6 @@
 from .base_page import BasePage
 from locators.register_locators import RegisterLocators
 from selenium.webdriver.common.by import By
-import time
 
 
 class RegisterPage(BasePage):

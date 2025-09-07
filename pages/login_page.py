@@ -19,4 +19,3 @@ class LoginPage(BasePage):
 
     def get_login_error_message(self):
         return self.find_element(By.XPATH, LoginLocators.LOGIN_ERROR_MESSAGE).text
-

@@ -1,17 +1,7 @@
-import pytest
-from selenium import webdriver
+import time
 from pages.store_page import StorePage
 from pages.cart_page import CartPage
 from pages.checkout_page import CheckoutPage
-import time
-
-
-@pytest.fixture
-def setup():
-    driver = webdriver.Chrome()
-    driver.get("https://fakestore.testelka.pl/")
-    yield driver
-    driver.quit()
 
 
 def test_card_message_incomplete_number(setup):
@@ -35,7 +25,7 @@ def test_card_message_incomplete_number(setup):
     # Get error message and assert with expected message
     expected_message = 'Numer karty jest niepełny.'
     card_number_message = checkout_page.get_error_message('card_number', expected_message)
-    print(card_number_message)
+    print(time.strftime("%a, %d %b %Y %H:%M:%S ") + card_number_message)
     assert card_number_message in expected_message
 
 def test_card_message_wrong_card_number(setup):
@@ -59,7 +49,7 @@ def test_card_message_wrong_card_number(setup):
     # Get error message and assert with expected message
     expected_message = 'Numer karty jest nieprawidłowy.'
     card_number_message = checkout_page.get_error_message('card_number', expected_message)
-    print(card_number_message)
+    print(time.strftime("%a, %d %b %Y %H:%M:%S ") + card_number_message)
     assert card_number_message in expected_message
 
 def test_card_message_incomplete_expiry_date(setup):
@@ -83,7 +73,7 @@ def test_card_message_incomplete_expiry_date(setup):
     # Get error message and assert with expected message
     expected_message = 'Data ważności karty jest niepełna.'
     card_expiry_date_message = checkout_page.get_error_message('card_expiry_date', expected_message)
-    print(card_expiry_date_message)
+    print(time.strftime("%a, %d %b %Y %H:%M:%S ") + card_expiry_date_message)
     assert card_expiry_date_message in expected_message
 
 def test_card_message_expired_card(setup):
@@ -107,7 +97,7 @@ def test_card_message_expired_card(setup):
     # Get error message and assert with expected message
     expected_message = 'Termin ważności karty znajduje się w przeszłości.'
     card_expiry_date_message = checkout_page.get_error_message('card_expiry_date', expected_message)
-    print(card_expiry_date_message)
+    print(time.strftime("%a, %d %b %Y %H:%M:%S ") + card_expiry_date_message)
     assert card_expiry_date_message in expected_message
 
 def test_card_message_cvc_code_incomplete(setup):

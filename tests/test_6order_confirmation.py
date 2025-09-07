@@ -1,28 +1,17 @@
-import pytest
-from selenium import webdriver
-
-from pages.order_confirmation_page import OrderConfirmationPage
+import time
 from pages.store_page import StorePage
 from pages.cart_page import CartPage
 from pages.checkout_page import CheckoutPage
-import time
-from datetime import datetime
+from pages.order_confirmation_page import OrderConfirmationPage
 
-
-@pytest.fixture
-def setup():
-    driver = webdriver.Chrome()
-    driver.get("https://fakestore.testelka.pl/")
-    yield driver
-    driver.quit()
 
 def test_order_placed_correctly(setup):
     store_page = StorePage(setup)
     cart_page = CartPage(setup)
     checkout_page = CheckoutPage(setup)
     order_confirmation_page = OrderConfirmationPage(setup)
-    email = 'd4rek.tester'
-    password = 'F4ke1425!@a'
+    email = 'LoginSuccess@domena.pl'
+    password = 'LoginSuccess@domena.pl'
 
     # Go to shop
     store_page.go_to_shop()

@@ -1,4 +1,3 @@
-from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
@@ -6,7 +5,7 @@ from selenium.webdriver.support import expected_conditions as EC
 class BasePage:
     def __init__(self, driver):
         self.driver = driver
-        self.wait = WebDriverWait(self.driver, 10, 0.5)
+        self.wait = WebDriverWait(self.driver, 20, 0.5)
 
     def find_element(self, by, value):
         return self.driver.find_element(by, value)
@@ -32,14 +31,8 @@ class BasePage:
     def wait_until_text_present(self, by, value, text):
         return self.wait.until(EC.text_to_be_present_in_element((by, value), text))
 
-    def js_scroll_into_view(self, arguments):
-        return self.driver.execute_script("arguments[0].scrollIntoView();", arguments)
-
     def js_scroll_into_view_block(self, arguments):
         return self.driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", arguments)
-
-    def js_click(self, arguments):
-        return self.driver.execute_script("arguments[0].click();", arguments)
 
     def js_display_none(self, arguments):
         return self.driver.execute_script("arguments[0].style.display = 'none';", arguments)

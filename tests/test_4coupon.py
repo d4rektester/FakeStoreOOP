@@ -1,15 +1,6 @@
-import pytest
-from selenium import webdriver
+import time
 from pages.store_page import StorePage
 from pages.coupon_page import CouponPage
-import time
-
-@pytest.fixture
-def setup():
-    driver = webdriver.Chrome()
-    driver.get("https://fakestore.testelka.pl/")
-    yield driver
-    driver.quit()
 
 
 def test_coupon_apply(setup):
@@ -29,7 +20,7 @@ def test_coupon_apply(setup):
     # Assert coupon applied
     expected_message = 'Kupon został pomyślnie użyty.'
     coupon_message = coupon_page.get_coupon_message(expected_message)
-    print(coupon_message)
+    print(time.strftime("%a, %d %b %Y %H:%M:%S ") + coupon_message)
     assert coupon_message in expected_message
 
 def test_coupon_remove(setup):
@@ -51,5 +42,5 @@ def test_coupon_remove(setup):
     # Assert coupon removed
     expected_message = 'Kupon został usunięty.'
     coupon_message = coupon_page.get_coupon_message(expected_message)
-    print(coupon_message)
+    print(time.strftime("%a, %d %b %Y %H:%M:%S ") + coupon_message)
     assert coupon_message in expected_message
