@@ -7,7 +7,7 @@ def test_login_empty_username (setup):
     store_page = StorePage(setup)
     login_page = LoginPage(setup)
     email = ''
-    password = ''
+    password = '1234#'
 
     # Go to login page
     store_page.go_to_myaccount()

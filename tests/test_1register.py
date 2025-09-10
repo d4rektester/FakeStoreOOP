@@ -6,7 +6,7 @@ import time
 def test_register_user_success(setup):
     store_page = StorePage(setup)
     register_page = RegisterPage(setup)
-    user = 'successfulregistration01'
+    user = 'successfulregistration50'
     email = f'{user}@domena.pl'
     password = 'successfulregistration@domena.pl'
 

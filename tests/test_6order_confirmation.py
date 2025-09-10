@@ -10,8 +10,8 @@ def test_order_placed_correctly(setup):
     cart_page = CartPage(setup)
     checkout_page = CheckoutPage(setup)
     order_confirmation_page = OrderConfirmationPage(setup)
-    email = 'LoginSuccess@domena.pl'
-    password = 'LoginSuccess@domena.pl'
+    email = 'testend2end@domena.pl'
+    password = 'testend2end@domena.pl'
 
     # Go to shop
     store_page.go_to_shop()

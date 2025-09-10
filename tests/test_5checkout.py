@@ -128,8 +128,8 @@ def test_terms_checkbox_not_selected(setup):
     store_page = StorePage(setup)
     cart_page = CartPage(setup)
     checkout_page = CheckoutPage(setup)
-    email = 'd4rek.tester'
-    password = 'F4ke1425!@a'
+    email = 'testcheckbox@domena.pl'
+    password = 'testcheckbox@domena.pl'
 
     # Go to shop
     store_page.go_to_shop()
