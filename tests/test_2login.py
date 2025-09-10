@@ -101,7 +101,7 @@ def test_login_by_username_wrong_password (setup):
     print(time.strftime("%a, %d %b %Y %H:%M:%S ") + error_message)
     assert error_message in expected_message
 
-def test_login_user(setup):
+def test_login_user_success(setup):
     store_page = StorePage(setup)
     login_page = LoginPage(setup)
     user = 'LoginSuccess'
